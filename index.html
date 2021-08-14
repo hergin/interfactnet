@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="icon" href="favicon.png" />
 <style>
@@ -30,11 +31,31 @@ body, html {height: 100%}
     <p class="w3-xlarge w3-center soon">If you don't like being stuck before a stopped train, InterFact is for you!</p>
     <hr class="w3-border-grey" style="margin:auto;width:40%">
     <p class="w3-large w3-center"><img width="200px" src="logo.png"></p>
+    <p class="w3-large w3-center">
+    <button type="button" class="btn btn-success align-center" data-toggle="modal" data-target="#proposeModal">Click here to sign up for the news!</button></p>
   </div>
   <div class="w3-display-bottomright w3-padding-large">
     by <a href="http://www.cs.bsu.edu/~hergin/" target="_blank">Huseyin Ergin</a>
   </div>
 </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="proposeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdj1n46Lo5FieNuewom1B_qhj-zeS0xo-veG_vgCYL2mjOLKQ/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+
 
 </body>
 </html>
