@@ -132,6 +132,20 @@ q:after {
 	content: none;
 }
 
+.inner-link {
+	font-size: 1.1rem;
+	margin-right: 10px;
+	line-height: 1.4;
+    letter-spacing: 0.3rem;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+
+.active-inner-link {
+	font-weight: bold;
+	font-size: 1.4rem;
+}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
