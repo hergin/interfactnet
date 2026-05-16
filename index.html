@@ -1,206 +1,435 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>InterFact</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css?v=20250406" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
-	<link rel="icon" href="favicon.png" />
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y719344WM8"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InterFact — Smart Railroad Crossing Monitoring</title>
+  <meta name="description" content="InterFact uses solar-powered AI cameras to monitor railroad crossings in real time. Live maps, instant alerts, and predictive analytics keep your city moving. Now live in Vincennes, Indiana.">
+  <meta name="keywords" content="railroad crossing monitoring, smart city, train tracking, freight train delay, solar powered camera, railroad crossing alert, city transportation, ArcGIS integration, InterFact, Vincennes Indiana">
+  <meta name="author" content="Dr. Huseyin Ergin">
+  <link rel="canonical" href="https://interfact.net/">
 
-		gtag('config', 'G-Y719344WM8');
-	</script>
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://interfact.net/">
+  <meta property="og:title" content="InterFact — Smart Railroad Crossing Monitoring">
+  <meta property="og:description" content="Solar-powered AI cameras monitor railroad crossings in real time. Live maps, instant alerts, and predictive analytics for smarter, safer cities.">
+  <meta property="og:image" content="https://interfact.net/images/logo.png">
+  <meta property="og:site_name" content="InterFact">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="InterFact — Smart Railroad Crossing Monitoring">
+  <meta name="twitter:description" content="Solar-powered AI cameras monitor railroad crossings in real time. Live maps, instant alerts, and predictive analytics for smarter, safer cities.">
+  <meta name="twitter:image" content="https://interfact.net/images/logo.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "InterFact",
+    "description": "Solar-powered AI cameras that monitor railroad crossings in real time, providing live maps, instant alerts, and predictive analytics for cities.",
+    "url": "https://interfact.net",
+    "image": "https://interfact.net/images/logo.png",
+    "brand": {
+      "@type": "Organization",
+      "name": "InterFact",
+      "url": "https://interfact.net",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hergin@bsu.edu",
+        "contactType": "sales"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      }
+    }
+  }
+  </script>
+
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y719344WM8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Y719344WM8');
+  </script>
 </head>
+<body>
 
-<body class="is-preload">
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <img src="images/logo.png" alt="InterFact logo" width="36" height="36">
+        <span>InterFact</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#results">Results</a>
+        <a href="#contact" class="nav-cta">Request Demo</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#problem">Problem</a>
+    <a href="#solution">Solution</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#results">Results</a>
+    <a href="#contact">Request Demo</a>
+  </div>
 
-		<!-- Header -->
-		<header id="header">
-			<div class="logo">
-				<img class="image fit" src="images/logo.png" /></span>
-			</div>
-			<div class="content">
-				<div class="inner">
-					<h1>InterFact</h1>
-					<h3 style="text-transform:none;">
-						Stuck at a railroad crossing? <strong>InterFact keeps your city moving.</strong>
-				</div>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="#problem">Problem</a></li>
-					<li><a href="#solution">Solution</a></li>
-					<li><a href="#status">Status</a></li>
-				</ul>
-			</nav>
-		</header>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <p class="eyebrow fade-up">Smart Railroad Crossing Monitoring</p>
+        <h1 class="fade-up">Keep Your City <span class="highlight">Moving.</span></h1>
+        <p class="hero-subtitle fade-up">Real-time railroad crossing intelligence powered by solar energy and AI. Know when trains block your roads before your residents do.</p>
+        <div class="hero-actions fade-up">
+          <a href="#contact" class="btn-primary">Request a Demo</a>
+          <a href="#how-it-works" class="btn-ghost">See How It Works</a>
+        </div>
+        <div class="hero-badge fade-up">
+          <span class="pulse-dot"></span>
+          Live in Vincennes, Indiana
+        </div>
+      </div>
+    </div>
+  </section>
 
-		<!-- Main -->
-		<div id="main">
+  <!-- Divider -->
+  <div class="stripe-accent" aria-hidden="true"></div>
 
-			<!-- Problem -->
-			<article id="problem">
-				<span>
-					<a class="active-inner-link inner-link" href="#problem">Problem</a>
-					<a class="inner-link" href="#solution">Solution</a>
-					<a class="inner-link" href="#status">Status</a>
-				</span>
-				<br /><br />
-				<span class="image main"><img src="images/problem.jpg" alt="Blocked crossing image" /></span>
-				<p>
-					Many mid-sized cities across the U.S. face a frustrating, familiar issue: freight trains stopping on roads without warning.  
-					These delays disrupt commutes, emergency response, and daily life — from school drop-offs to medical appointments.
-				</p>
-				<p>
-					In cities like Muncie, Indiana, over 100 surveyed residents reported waiting between 5 minutes to over an hour behind a stopped train.  
-					Your city may face similar delays — but it doesn’t have to.
-				</p>
-				<p>See how <a href="#solution">InterFact</a> can help.</p>
-			</article>
+  <!-- Problem -->
+  <section id="problem">
+    <div class="container">
+      <div class="problem-grid">
+        <div>
+          <p class="eyebrow fade-up">The Problem</p>
+          <h2 class="section-heading fade-up">Freight Trains Are Blocking Your Roads</h2>
+          <p class="fade-up" style="color: var(--text-secondary); margin-bottom: 16px;">
+            Across hundreds of U.S. cities, freight trains stop on roads without warning. Commuters wait. Ambulances reroute. School buses stall. And no one knows when it will clear.
+          </p>
+          <p class="fade-up" style="color: var(--text-secondary); margin-bottom: 32px;">
+            In a survey of 100+ residents in Muncie, Indiana, reported wait times ranged from 5 minutes to over an hour — with no way to check before driving into the delay.
+          </p>
+          <div class="stat-cards fade-up">
+            <div class="stat-card">
+              <div class="stat-value">5–60+</div>
+              <div class="stat-label">Minutes waiting per blockage</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">100+</div>
+              <div class="stat-label">Residents surveyed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">0</div>
+              <div class="stat-label">Warning before a blockage</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">24/7</div>
+              <div class="stat-label">Impact on emergency routes</div>
+            </div>
+          </div>
+        </div>
+        <div class="problem-image fade-up">
+          <img src="images/problem.jpg" alt="Train blocking a road crossing" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
 
-			<!-- Solution -->
-			<article id="solution">
-				<span>
-					<a class="inner-link" href="#problem">Problem</a>
-					<a class="active-inner-link inner-link" href="#solution">Solution</a>
-					<a class="inner-link" href="#status">Status</a>
-				</span>
-				<br /><br />
-				<p>
-					InterFact uses solar-powered smart cameras and machine learning to monitor your city's railroad crossings in real time.  
-					The data is displayed in a clean, map-based interface that anyone can use — from city engineers to everyday commuters.
-				</p>
+  <!-- Divider -->
+  <div class="stripe-accent" aria-hidden="true"></div>
 
-				<span class="image main">
-					<p>Here’s a look at one of our installations in Vincennes, IN:</p>
-					<img src="images/camera.png" alt="InterFact camera setup" />
-				</span>
+  <!-- Solution -->
+  <section id="solution" class="alt-bg">
+    <div class="container">
+      <p class="eyebrow fade-up">The Solution</p>
+      <h2 class="section-heading fade-up">AI-Powered Crossing Intelligence</h2>
+      <p class="section-subtext fade-up">InterFact puts smart, solar-powered cameras at your crossings and turns raw video into actionable data — for engineers, first responders, and everyday drivers.</p>
 
-				<p>Emergency responders can integrate data into ArcGIS:</p>
-				<span class="image main">
-					<img src="images/arcgis.png" alt="InterFact railroad crossing map in arcgis" />
-				</span>
+      <div class="feature-grid">
+        <div class="feature-card fade-up">
+          <div class="feature-card-img">
+            <img src="images/camera.png" alt="Solar-powered InterFact camera installation" loading="lazy">
+          </div>
+          <div class="feature-card-body">
+            <h3>Smart Cameras</h3>
+            <p>Solar-powered units with machine learning detect trains in real time — day or night, rain or shine. No city power needed.</p>
+          </div>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="feature-card-img">
+            <img src="images/vincennes.png" alt="InterFact live crossing map" loading="lazy">
+          </div>
+          <div class="feature-card-body">
+            <h3>Live City Maps</h3>
+            <p>A clean, map-based dashboard shows every crossing's status in real time. Open to engineers, residents, and decision-makers.</p>
+          </div>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="feature-card-img">
+            <img src="images/notifications_new.png" alt="InterFact push notification mockup" loading="lazy">
+          </div>
+          <div class="feature-card-body">
+            <h3>Instant Alerts</h3>
+            <p>Push notifications tell drivers when a crossing blocks or clears. No more guessing — just check your phone before you drive.</p>
+          </div>
+        </div>
+        <div class="feature-card fade-up">
+          <div class="feature-card-img">
+            <img src="images/stats1.png" alt="InterFact analytics dashboard" loading="lazy">
+          </div>
+          <div class="feature-card-body">
+            <h3>Predictive Analytics</h3>
+            <p>Historic patterns and crossing data give city planners and legislators the evidence they need to act.</p>
+          </div>
+        </div>
+      </div>
 
-				<p>Residents can view real-time statuses on a city map:</p>
-				<span class="image main">
-					<img src="images/solution_updated_map.png" alt="InterFact railroad crossing map" />
-				</span>
+      <p class="eyebrow fade-up" style="margin-top: 32px;">Integration</p>
+      <p class="fade-up" style="color: var(--text-secondary); margin-bottom: 24px;">Integrate data into anywhere you'd like</p>
+      
+	  <div class="feature-grid">
+        <div class="feature-card fade-up">
+          <div class="feature-card-img">
+            <img src="images/arcgis.png" alt="InterFact ArcGIS integration for emergency responders" loading="lazy">
+          </div>
+          <div class="feature-card-body">
+            <h3>ArcGIS Integration</h3>
+            <p>First responders see live crossing data directly in ArcGIS — optimizing routes when seconds count.</p>
+          </div>
+        </div>
+		<div class="feature-card fade-up">
+          <div class="feature-card-img">
+            <img src="images/status-image.png" alt="InterFact status dashboard for any webpage" loading="lazy">
+          </div>
+          <div class="feature-card-body">
+            <h3>Status Dashboard</h3>
+            <p>Integrate live crossing status into any webpage or application for real-time visibility.</p>
+          </div>
+        </div>
+	  </div>
+	 
+    </div>
+  </section>
 
-				<p>
-					They can even sign up for instant push notifications when a train blocks or clears a crossing.
-				</p>
+  <!-- Divider -->
+  <div class="stripe-accent" aria-hidden="true"></div>
 
-				<span class="image main">
-					<img src="images/interfact_new_notifications_combined.png" alt="InterFact notification system" />
-				</span>
+  <!-- How It Works -->
+  <section id="how-it-works">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <p class="eyebrow fade-up" style="justify-content: center;">How It Works</p>
+        <h2 class="section-heading fade-up">From Installation to Intelligence in Days</h2>
+        <p class="section-subtext fade-up" style="margin-left: auto; margin-right: auto;">No months-long infrastructure projects. InterFact deploys fast and delivers results immediately.</p>
+      </div>
 
-				<p>
-					InterFact also provides predictive analytics and historic crossing patterns — invaluable for city planning and legislation.
-				</p>
+      <div class="steps">
+        <div class="step fade-up">
+          <div class="step-number">01</div>
+          <svg class="step-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/><path d="M2 4h3"/><path d="M3.5 2v4"/>
+          </svg>
+          <h3>Install</h3>
+          <p>A solar-powered smart camera is mounted at the crossing. No wiring, no permits headaches, no city power required.</p>
+        </div>
+        <div class="step fade-up">
+          <div class="step-number">02</div>
+          <svg class="step-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h.01"/><path d="M15 9h.01"/><path d="M9 15h.01"/><path d="M15 15h.01"/><path d="M12 4v2"/><path d="M12 18v2"/><path d="M4 12h2"/><path d="M18 12h2"/><circle cx="12" cy="12" r="2"/>
+          </svg>
+          <h3>Detect</h3>
+          <p>Machine learning identifies train presence in real time — blocked, clear, or moving. Data streams to the cloud instantly.</p>
+        </div>
+        <div class="step fade-up">
+          <div class="step-number">03</div>
+          <svg class="step-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><path d="M2 8c0-3.31 2.69-6 6-6"/><path d="M22 8c0-3.31-2.69-6-6-6"/>
+          </svg>
+          <h3>Inform</h3>
+          <p>Maps, push alerts, and quarterly reports reach everyone who needs them — from city hall to the morning commute.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<span class="image main">
-					<img src="images/stats1.png" alt="InterFact statistics" />
-				</span>
+  <!-- Crossing Stripe Accent -->
+  <div class="stripe-accent" aria-hidden="true"></div>
 
-				<span class="image main">
-					<img src="images/stats4.png" alt="InterFact statistics" />
-				</span>
+  <!-- Stats / Results -->
+  <section id="results" class="alt-bg grid-bg">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <p class="eyebrow fade-up" style="justify-content: center;">Proven Results</p>
+        <h2 class="section-heading fade-up">Data You Can Act On</h2>
+      </div>
 
-				<span class="image main">
-					<img src="images/stats3.png" alt="InterFact statistics" />
-				</span>
+      <div class="stats-counters">
+        <div class="counter fade-up">
+          <div class="counter-value" data-target="24" data-suffix="/7">24/7</div>
+          <div class="counter-label">Continuous monitoring</div>
+        </div>
+        <div class="counter fade-up">
+          <div class="counter-value" data-target="30" data-prefix="< " data-suffix="s">&lt; 30s</div>
+          <div class="counter-label">Detection speed</div>
+        </div>
+        <div class="counter fade-up">
+          <div class="counter-value" data-target="100" data-suffix="%">100%</div>
+          <div class="counter-label">Solar-powered</div>
+        </div>
+        <div class="counter fade-up">
+          <div class="counter-value" data-target="90" data-suffix=" days">90 days</div>
+          <div class="counter-label">Detailed reporting cycle</div>
+        </div>
+      </div>
 
+      <div class="dashboard-grid">
+        <div class="dashboard-frame fade-up">
+          <img src="images/longest-duration.png" alt="InterFact crossing pattern analytics" loading="lazy">
+        </div>
+        <div class="dashboard-frame fade-up">
+          <img src="images/blocked-percentage.png" alt="InterFact detailed crossing report" loading="lazy">
+        </div>
+		<div class="dashboard-frame fade-up">
+          <img src="images/propagation-times.png" alt="InterFact detailed crossing report" loading="lazy">
+        </div>
+		<div class="dashboard-frame fade-up">
+          <img src="images/average.png" alt="InterFact detailed crossing report" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<h3>🚦 Imagine this in your city:</h3>
-				<p>
-					Live maps. Smart alerts. Happier drivers. Faster emergency response.  
-					All powered by the sun and AI.
-				</p>
+  <!-- Divider -->
+  <div class="stripe-accent" aria-hidden="true"></div>
 
-				<p>Ready to learn more? See our <a href="#status">project status</a>.</p>
-			</article>
+  <!-- Benefits -->
+  <section id="benefits">
+    <div class="container">
+      <p class="eyebrow fade-up">Why InterFact</p>
+      <h2 class="section-heading fade-up">Built for Cities That Want to Move Faster</h2>
+      <p class="section-subtext fade-up">A low-cost, high-impact upgrade to your transportation infrastructure — without the red tape.</p>
 
-			<!-- Status -->
-			<article id="status">
-				<span>
-					<a class="inner-link" href="#problem">Problem</a>
-					<a class="inner-link" href="#solution">Solution</a>
-					<a class="active-inner-link inner-link" href="#status">Status</a>
-				</span>
-				<br /><br />
-				<p>
-					InterFact is currently live in Vincennes, Indiana — and growing.  
-					Could your city be next?
-				</p>
+      <div class="benefits-grid">
+        <div class="benefit-item fade-up">
+          <span class="benefit-dot"></span>
+          <div>
+            <h4>Solar-Powered</h4>
+            <p>Runs entirely on solar energy. No city power lines, no utility coordination, no ongoing energy costs.</p>
+          </div>
+        </div>
+        <div class="benefit-item fade-up">
+          <span class="benefit-dot"></span>
+          <div>
+            <h4>Any Crossing Type</h4>
+            <p>Works at crossings with gates, lights, or nothing at all. If a train can block it, InterFact can monitor it.</p>
+          </div>
+        </div>
+        <div class="benefit-item fade-up">
+          <span class="benefit-dot"></span>
+          <div>
+            <h4>Scales With You</h4>
+            <p>Start with one camera or deploy across 10+ crossings. The system grows with your city's needs.</p>
+          </div>
+        </div>
+        <div class="benefit-item fade-up">
+          <span class="benefit-dot"></span>
+          <div>
+            <h4>Live in Days</h4>
+            <p>No months-long construction or permitting delays. Install and start collecting data within days.</p>
+          </div>
+        </div>
+        <div class="benefit-item fade-up">
+          <span class="benefit-dot"></span>
+          <div>
+            <h4>First Responder Ready</h4>
+            <p>ArcGIS integration helps fire trucks and ambulances find the fastest open route — automatically.</p>
+          </div>
+        </div>
+        <div class="benefit-item fade-up">
+          <span class="benefit-dot"></span>
+          <div>
+            <h4>Transparent Reporting</h4>
+            <p>Quarterly detailed reports with full data transparency. Every step in our process is visible to your team.</p>
+          </div>
+        </div>
+        <div class="benefit-item fade-up">
+          <span class="benefit-dot"></span>
+          <div>
+            <h4>Affordable Pricing</h4>
+            <p>Competitive per-crossing pricing designed for mid-sized city budgets. High impact, low cost.</p>
+          </div>
+        </div>
+        <div class="benefit-item fade-up">
+          <span class="benefit-dot"></span>
+          <div>
+            <h4>Proven Technology</h4>
+            <p>Already live and delivering results in Vincennes, Indiana. Battle-tested, not theoretical.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<h4>Why choose InterFact?</h4>
-				<ul>
-					<li><strong>Solar-powered:</strong> No need to tap into city power lines.</li>
-					<li><strong>Flexible installation:</strong> Works at any crossing — even without lights or barriers.</li>
-					<li><strong>Scalable system:</strong> Start with 1 or 10 cameras — we grow with your needs.</li>
-					<li><strong>Quick setup:</strong> Go live in days, not months.</li>
-					<li><strong>First responder ready:</strong> Help fire trucks and ambulances find the fastest route.</li>
-					<li><strong>Reporting:</strong> Detailed reports on railroad crossing patterns every 3 months.</li>
-					<li><strong>Transparency:</strong> Every step in our process is transparent (you will see in our reports).</li>
-					<li><strong>Low Cost:</strong> Affordable and competitive pricing per crossing.</li>
-				</ul>
+  <!-- CTA + Contact -->
+  <section id="contact" class="cta-section alt-bg">
+    <div class="container">
+      <p class="eyebrow fade-up" style="justify-content: center;">Get Started</p>
+      <h2 class="section-heading fade-up">Ready to See InterFact in Your City?</h2>
+      <p class="section-subtext fade-up">Join Vincennes, Indiana in bringing smart railroad crossing intelligence to your community. Reach out for a free demo.</p>
+      <a href="mailto:hergin@bsu.edu?subject=InterFact%20Demo&body=Hi%20Dr.%20Ergin%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20InterFact%20for%20our%20city.%20Could%20we%20schedule%20a%20demo%3F%0A%0AThank%20you" class="btn-primary fade-up">Request a Demo</a>
 
-				<p>
-					InterFact is offered as a service to cities looking for a low-cost, high-impact upgrade to their transportation infrastructure.
-				</p>
+      <div class="cta-contact fade-up">
+        <p><strong>Dr. Huseyin Ergin</strong></p>
+        <p><a href="mailto:hergin@bsu.edu?subject=InterFact%20Demo&body=Hi%20Dr.%20Ergin%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20InterFact%20for%20our%20city.%20Could%20we%20schedule%20a%20demo%3F%0A%0AThank%20you">hergin@bsu.edu</a></p>
+      </div>
 
-				<p>If your city is interested in exploring InterFact, please reach out for a demo:</p>
-				<p><strong>Dr. Huseyin Ergin</strong><br />
-					<a href="mailto:hergin@bsu.edu">hergin@bsu.edu</a><br />
-					<a href="https://www.cs.bsu.edu/~hergin/" target="_blank">More about me</a>
-				</p>
+      <div class="social-links fade-up">
+        <a href="https://www.facebook.com/interfactnet" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/interfactnet" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.instagram.com/interfactnet/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
-				<p><strong>Follow us on social media for updates:</strong></p>
-				<ul class="icons">
-					<li><a target="_blank" href="https://www.facebook.com/interfactnet" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a target="_blank" href="https://www.linkedin.com/company/interfactnet" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a target="_blank" href="https://www.instagram.com/interfactnet/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				</ul>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 InterFact by <a href="https://www.cs.bsu.edu/~hergin/" target="_blank" rel="noopener">Huseyin Ergin</a></p>
+    </div>
+  </footer>
 
-			</article>
-
-		</div>
-
-		<!-- Footer -->
-		<footer id="footer">
-			<p class="copyright">&copy;2025, InterFact by <a href="https://www.cs.bsu.edu/~hergin/"
-					target="_blank">Huseyin Ergin</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-		</footer>
-
-	</div>
-
-	<!-- BG -->
-	<div id="bg"></div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
