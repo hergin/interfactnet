@@ -360,6 +360,58 @@ ul { list-style: none; }
 }
 
 
+/* --- Train Marquee --- */
+.marquee {
+  overflow: hidden;
+  padding: 32px 0;
+  position: relative;
+  background: var(--bg-section-alt);
+}
+/* Fade edges */
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-section-alt), transparent);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-section-alt), transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marquee-scroll 180s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+.marquee-track img {
+  height: 180px;
+  width: auto;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity var(--transition);
+}
+.marquee-track img:hover {
+  opacity: 1;
+}
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* --- Crossing Stripe Accent --- */
 .stripe-accent {
   height: 4px;
