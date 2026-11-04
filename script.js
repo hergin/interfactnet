@@ -129,4 +129,66 @@
     });
   }
   window.addEventListener('scroll', highlightNav, { passive: true });
+
+  // --- Oxie: tap for a two-step whisper that ends in an email ---
+  var oxie = document.getElementById('oxie');
+  var oxieWrap = document.getElementById('oxieWrap');
+  var bubble = document.getElementById('oxieBubble');
+  var step = 0;
+
+  function track(name) {
+    if (typeof gtag === 'function') gtag('event', name);
+  }
+
+  function setStep(next) {
+    step = next;
+    bubble.classList.toggle('is-open', step > 0);
+    bubble.classList.toggle('is-step-2', step === 2);
+    bubble.setAttribute('aria-hidden', step > 0 ? 'false' : 'true');
+    oxie.setAttribute('aria-expanded', step > 0 ? 'true' : 'false');
+  }
+
+  function nudge() {
+    oxie.classList.remove('is-nudged');
+    void oxie.offsetWidth; // restart the animation
+    oxie.classList.add('is-nudged');
+  }
+
+  oxie.addEventListener('click', function () {
+    nudge();
+    if (step === 0) {
+      setStep(1);
+      track('oxie_open');
+    } else if (step === 1) {
+      setStep(2);
+      track('oxie_more');
+    } else {
+      setStep(0);
+    }
+  });
+
+  document.getElementById('oxieMore').addEventListener('click', function () {
+    setStep(2);
+    track('oxie_more');
+  });
+
+  document.getElementById('oxieClose').addEventListener('click', function () {
+    setStep(0);
+    oxie.focus();
+  });
+
+  document.getElementById('oxieLink').addEventListener('click', function () {
+    track('oxie_email');
+  });
+
+  document.addEventListener('click', function (e) {
+    if (step > 0 && !oxieWrap.contains(e.target)) setStep(0);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && step > 0) {
+      setStep(0);
+      oxie.focus();
+    }
+  });
 })();

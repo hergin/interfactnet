@@ -605,6 +605,23 @@
     </div>
   </footer>
 
+  <!-- Oxie mascot: tap for a two-step whisper that ends in an email -->
+  <div class="oxie-wrap" id="oxieWrap">
+    <div class="oxie-bubble" id="oxieBubble" role="dialog" aria-label="A message from the corner" aria-hidden="true">
+      <button type="button" class="oxie-close" id="oxieClose" aria-label="Close message">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <p class="oxie-from">From the corner</p>
+      <p class="oxie-line" id="oxieLine1">Psst. I've been watching the crossings.</p>
+      <p class="oxie-line oxie-line-2" id="oxieLine2">I know which one blocks the most. Ask the human.</p>
+      <button type="button" class="oxie-more" id="oxieMore">What did you see? <span aria-hidden="true">&rarr;</span></button>
+      <a class="oxie-link" id="oxieLink" href="mailto:huseyin@ergin.tech?subject=The%20ox%20sent%20me&body=Hi%20Huseyin%2C%0A%0AThe%20ox%20in%20the%20corner%20of%20your%20site%20said%20you%20know%20which%20crossing%20blocks%20the%20most.%0A%0A">Write to the human <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <button type="button" class="oxie" id="oxie" aria-label="A curious ox. Tap it." aria-expanded="false" aria-controls="oxieBubble">
+      <img src="images/oxie-small.png" alt="" width="160" height="141">
+    </button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
