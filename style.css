@@ -633,6 +633,9 @@ section.grid-bg {
   font-size: 0.9rem;
   line-height: 1.6;
 }
+/* Integrations: three cards in one row, with shorter image frames */
+.feature-grid.feature-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.feature-grid--3 .feature-card-img { height: 250px; }
 .showcase {
   border-radius: var(--radius);
   overflow: hidden;
@@ -1112,6 +1115,7 @@ section.trust-band {
   .hero .container { padding-top: 40px; padding-bottom: 40px; }
   .hero-bg::after { display: none; }
   .feature-grid { grid-template-columns: 1fr; }
+  .feature-grid.feature-grid--3 { grid-template-columns: 1fr; }
   .steps {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -1138,6 +1142,10 @@ section.trust-band {
   .pledge-grid { grid-template-columns: 1fr; grid-template-rows: none; }
   .pledge { display: block; padding: 28px 24px; }
   .oxie-wrap { --oxie-width: 44px; --oxie-tail: 13px; }
+  /* Slightly tighter hero on phones so the badge list clears Oxie's corner */
+  .hero-assurances { margin-bottom: 24px; }
+  .hero-actions { margin-bottom: 28px; }
+  .hero-badges { gap: 8px; }
   .oxie-bubble { left: 8px; }
   .track-divider { padding: 32px 0; }
   .track-divider-inner { height: 56px; }
